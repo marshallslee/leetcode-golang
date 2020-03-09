@@ -3,6 +3,8 @@
 
 package main
 
+import "fmt"
+
 func twoSum(nums []int, target int) []int {
 	mymap := make(map[int]int)
 	for i := 0; i < len(nums); i++ {
@@ -15,4 +17,11 @@ func twoSum(nums []int, target int) []int {
 	}
 	result := []int{-1, -1}
 	return result
+}
+
+func main() {
+	nums := []int{1, 3, 5, 7, 9}
+	target := 4
+	answer := twoSum(nums, target)
+	fmt.Println(answer)
 }
