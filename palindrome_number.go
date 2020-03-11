@@ -6,6 +6,10 @@ package main
 import "fmt"
 
 func isPalindrome(x int) bool {
+	if x < 0 {
+		x *= -1
+	}
+
 	var remainder, temp int
 	reverse := 0
 
