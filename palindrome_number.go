@@ -3,29 +3,25 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func isPalindrome(x int) bool {
 	if x < 0 {
-		x *= -1
+		return false
 	}
 
-	var remainder, temp int
-	reverse := 0
+	s := strconv.Itoa(x)
 
-	temp = x
-
-	for {
-		remainder = x % 10
-		reverse = reverse*10 + remainder
-		x /= 10
-
-		if x == 0 {
-			break
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		if s[i] != s[j] {
+			return false
 		}
 	}
 
-	return temp == reverse
+	return true
 }
 
 func main() {
